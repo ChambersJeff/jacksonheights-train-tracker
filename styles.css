@@ -1,0 +1,41 @@
+/* Center the title */
+.page-title {
+  text-align: center;         /* centers the text horizontally */
+  font-size: 2em;             /* adjust the font size to make it stand out */
+  margin: 20px 0;             /* add vertical spacing */
+  color: #ffffff;             /* white color for dark mode */
+}
+
+/* Dark mode background & text */
+body {
+    background-color: #121212; /* near-black background */
+    color: #e0e0e0;           /* light gray text */
+    font-family: Arial, sans-serif;
+    margin: 0; /* remove default browser margins */
+    padding: 0;
+  }
+  
+  /* Container that holds all three boxes at the top */
+  .boxes-container {
+    display: flex;                /* enable flexbox layout */
+    justify-content: space-between; /* spread out the boxes horizontally */
+    gap: 20px;                    /* spacing between boxes */
+    margin: 20px;                 /* some space around the container */
+  }
+  
+  /* Each individual box */
+  .box {
+    flex: 1;                      /* each box grows/shrinks equally to fill space */
+    background-color: #333;       /* a dark gray background for contrast */
+    padding: 20px;
+    border-radius: 5px;           /* slightly rounded corners */
+    text-align: center;           /* center the headings inside the box */
+    color: #ffffff;               /* white text color */
+  }
+  
+  /* Remove default margin around h2 and possibly adjust font-size if desired */
+  .box h2 {
+    margin: 0;
+    font-weight: normal;
+  }
+  

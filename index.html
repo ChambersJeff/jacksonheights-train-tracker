@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Nearby Trains</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Protobuf.js for decoding MTA real-time data -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/protobufjs/7.2.5/protobuf.min.js"></script>
+
+  <!-- Dark Mode Styles -->
+  <style>
+    /* Overall page background and text color */
+    body {
+      background-color: #121212; /* near-black background */
+      color: #e0e0e0;           /* light gray text for contrast */
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1, h2, h3 {
+      color: #ffffff; /* make headings white or slightly off-white */
+    }
+
+    .line-section {
+      background-color: #1e1e1e; /* a slightly lighter dark for sections */
+      border: 1px solid #333;    /* darker border */
+      padding: 1em;
+      margin-bottom: 1.5em;
+      border-radius: 5px;
+    }
+
+    .train-update {
+      margin: 0.3em 0;
+    }
+
+    /* Because the default green and red may be hard to read on dark, 
+       consider using brighter hues or more saturated colors: */
+    .green-text {
+      color: #4ade80; /* a bright green (Tailwind's "green-300" style, for instance) */
+    }
+
+    .red-text {
+      color: #f87171; /* a bright red (Tailwind's "red-400") */
+    }
+
+    /* If you're hiding trains or showing them based on threshold, 
+       you can just directly set p.style.color in JS. 
+       But if you prefer classes, you can toggle .green-text or .red-text 
+       in your JavaScript code. */
+  </style>
+</head>
+<body>
+  <!-- Centered page title -->
+  <header>
+    <h1 class="page-title">Upcoming Trains - Jackson Heights</h1>
+    <div class="boxes-container">
+      <div class="box">
+        <h2>Getting to Work</h2>
+        <h3>7 Train</h3>
+        <p id="leave-message">Calculating your next train...</p>
+      </div>
+      <div class="box">
+        <h2>Getting to Astoria</h2>
+        <h3>R Train</h3>
+        <p id="leave-message-astoria">Calculating your next train...</p>
+      </div>
+      <div class="box">
+        <h2>Getting to Manhattan</h2>
+        <div id="e-train-container">
+          <h3>E Train</h3>
+          <p id="leave-message-e">Calculating your next train...</p>
+        </div>
+        <div id="f-train-container">
+          <h3>F Train</h3>
+          <p id="leave-message-f">Calculating your next train...</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="lines-container"></div>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
